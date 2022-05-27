@@ -14,15 +14,15 @@ package frc.robot;
  */
 public final class Constants {
 
-    public static final int CONTROLLERPORT = 1;
-    public static final int R2CONTROLLERPORT = 2;
+    public static final int CONTROLLERPORT = 0;
+    public static final int R2CONTROLLERPORT = 1;
 
     // Robot One //
     public static final int R1T1 = 0;
     public static final int R1T2 = 1;
     public static final int R1V1 = 1;
     public static final int R1V2 = 0;
-    public static final int R1SE = 9;
+    public static final int R1SE = 8;
     public static final int R1SO = 4;
 
     // Robot Two //
@@ -30,6 +30,6 @@ public final class Constants {
     public static final int R2T2 = 3;
     public static final int R2V1 = 2;
     public static final int R2V2 = 3;
-    public static final int R2SE = 10;
+    public static final int R2SE = 9;
     public static final int R2SO = 5;
 }

@@ -5,7 +5,6 @@
 package frc.robot.RobotTwoCommands;
 import frc.robot.RobotTwoSubsystems.*;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Servo;
 
 /** An example command that uses an example subsystem. */
 public class R2ServoZero extends CommandBase {

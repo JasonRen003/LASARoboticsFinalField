@@ -5,7 +5,6 @@
 package frc.robot.RobotOneCommands;
 import frc.robot.RobotOneSubsystems.*;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Servo;
 
 /** An example command that uses an example subsystem. */
 public class Servo90 extends CommandBase {

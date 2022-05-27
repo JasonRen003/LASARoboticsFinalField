@@ -57,6 +57,7 @@ public class RobotContainer {
   private final VTwoForward vTwoForward = new VTwoForward(victorTwo);
   private final VOneBackwards vOneBackwards = new VOneBackwards(victorOne);
   private final VTwoBackwards vTwoBackwards = new VTwoBackwards(victorTwo);
+  SendableChooser<Command> m_chooser;
 
 
   // Robot Two //
@@ -78,29 +79,30 @@ public class RobotContainer {
   private final R2VTwoForward r2vTwoForward = new R2VTwoForward(r2victorTwo);
   private final R2VOneBackwards r2vOneBackwards = new R2VOneBackwards(r2victorOne);
   private final R2VTwoBackwards r2vTwoBackwards = new R2VTwoBackwards(r2victorTwo);
+  SendableChooser<Command> r2chooser;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    SendableChooser<Command> m_chooser = new SendableChooser<>();
+    m_chooser = new SendableChooser<>();
     m_chooser.setDefaultOption("R1 Tank Drive", tankDrive);
     m_chooser.addOption("R1 Arcade Drive", arcadeDrive);
     SmartDashboard.putData(m_chooser);
 
-    driveTalons.setDefaultCommand(m_chooser.getSelected());
+    
     victorOne.setDefaultCommand(vOneDefault);
     victorTwo.setDefaultCommand(vTwoDefault);
     solenoidOne.setDefaultCommand(solenoidIn);
     servoOne.setDefaultCommand(servoZero);
 
 
-    SendableChooser<Command> r2chooser = new SendableChooser<>();
+    r2chooser = new SendableChooser<>();
     r2chooser.setDefaultOption("R2 Tank Drive", r2tankDrive);
     r2chooser.addOption("R2 Arcade Drive", r2arcadeDrive);
     SmartDashboard.putData(r2chooser);
 
-    r2driveTalons.setDefaultCommand(r2chooser.getSelected());
+    
     r2victorOne.setDefaultCommand(r2vOneDefault);
     r2victorTwo.setDefaultCommand(r2vTwoDefault);
     r2solenoidOne.setDefaultCommand(r2solenoidIn);
@@ -108,6 +110,10 @@ public class RobotContainer {
 
   }
 
+  public void DriveMode(){
+    driveTalons.setDefaultCommand(m_chooser.getSelected());
+    r2driveTalons.setDefaultCommand(r2chooser.getSelected());
+  }
   /**
    * Use this method to define your button->command mappings. Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
