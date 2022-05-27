@@ -1,0 +1,39 @@
+{
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/DriveTalons": "Subsystem",
+      "/LiveWindow/R2DriveTalons": "Subsystem",
+      "/LiveWindow/R2ServoOne": "Subsystem",
+      "/LiveWindow/R2SolenoidOne": "Subsystem",
+      "/LiveWindow/R2VictorOne": "Subsystem",
+      "/LiveWindow/R2VictorTwo": "Subsystem",
+      "/LiveWindow/ServoOne": "Subsystem",
+      "/LiveWindow/SolenoidOne": "Subsystem",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/LiveWindow/Ungrouped/VictorSP[0]": "Motor Controller",
+      "/LiveWindow/Ungrouped/VictorSP[1]": "Motor Controller",
+      "/LiveWindow/Ungrouped/VictorSP[2]": "Motor Controller",
+      "/LiveWindow/Ungrouped/VictorSP[3]": "Motor Controller",
+      "/LiveWindow/VictorOne": "Subsystem",
+      "/LiveWindow/VictorTwo": "Subsystem",
+      "/SmartDashboard/SendableChooser[0]": "String Chooser",
+      "/SmartDashboard/SendableChooser[1]": "String Chooser"
+    }
+  },
+  "NetworkTables": {
+    "SmartDashboard": {
+      "SendableChooser[1]": {
+        "open": true
+      },
+      "open": true
+    }
+  },
+  "Plot": {
+    "Plot <0>": {
+      "window": {
+        "visible": false
+      }
+    }
+  }
+}
