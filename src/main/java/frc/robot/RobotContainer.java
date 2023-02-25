@@ -9,6 +9,8 @@ import frc.robot.RobotTwoCommands.*;
 import frc.robot.RobotOneSubsystems.*;
 import frc.robot.RobotTwoSubsystems.*;
 
+import frc.robot.FieldSubsystems.*;
+import frc.robot.FieldCommands.*;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
@@ -31,11 +33,11 @@ public class RobotContainer {
 
   private final XboxController controller = new XboxController(Constants.CONTROLLERPORT);
   private final XboxController r2controller = new XboxController(Constants.R2CONTROLLERPORT);
-  private final HazyTrigger righthazyTrigger = new HazyTrigger(controller, 3);
-  private final HazyTrigger lefthazyTrigger = new HazyTrigger(controller, 2);
+  //private final HazyTrigger righthazyTrigger = new HazyTrigger(controller, 3);
+  //private final HazyTrigger lefthazyTrigger = new HazyTrigger(controller, 2);
 
-  private final HazyTrigger r2righthazyTrigger = new HazyTrigger(r2controller, 3);
-  private final HazyTrigger r2lefthazyTrigger = new HazyTrigger(r2controller, 2);
+  //private final HazyTrigger r2righthazyTrigger = new HazyTrigger(r2controller, 3);
+  //private final HazyTrigger r2lefthazyTrigger = new HazyTrigger(r2controller, 2);
 
 
   // Robot One //
@@ -81,6 +83,11 @@ public class RobotContainer {
   private final R2VTwoBackwards r2vTwoBackwards = new R2VTwoBackwards(r2victorTwo);
   SendableChooser<Command> r2chooser;
 
+  // Field //
+  private final FieldServo fieldServo = new FieldServo();
+  
+  private final WaitAndTurn wt = new WaitAndTurn(fieldServo, Constants.FSWT);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -108,12 +115,18 @@ public class RobotContainer {
     r2solenoidOne.setDefaultCommand(r2solenoidIn);
     r2servoOne.setDefaultCommand(r2servoZero);
 
+    //fieldServo.setDefaultCommand(fieldServoZero);
   }
 
   public void DriveMode(){
     driveTalons.setDefaultCommand(m_chooser.getSelected());
     r2driveTalons.setDefaultCommand(r2chooser.getSelected());
   }
+
+  public WaitAndTurn getFST(){ //Returns command that makes field servo wait and then turn
+    return wt;
+  }
+
   /**
    * Use this method to define your button->command mappings. Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -121,16 +134,20 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    lefthazyTrigger.toggleWhenPressed(vOneBackwards);
+    //lefthazyTrigger.toggleWhenPressed(vOneBackwards);
+    new JoystickButton(controller, 7).toggleWhenPressed(vOneBackwards);
     new JoystickButton(controller, Button.kLeftBumper.value).toggleWhenPressed(vOneForward);
-    righthazyTrigger.toggleWhenPressed(vTwoBackwards);
+    //righthazyTrigger.toggleWhenPressed(vTwoBackwards);
+    new JoystickButton(controller, 8).toggleWhenPressed(vTwoBackwards);
     new JoystickButton(controller, Button.kRightBumper.value).toggleWhenPressed(vTwoForward);
     new JoystickButton(controller, Button.kA.value).toggleWhenPressed(solenoidOut);
     new JoystickButton(controller, Button.kB.value).toggleWhenPressed(servo90);
     
-    r2lefthazyTrigger.toggleWhenPressed(r2vOneBackwards);
+    //r2lefthazyTrigger.toggleWhenPressed(r2vOneBackwards);
+    new JoystickButton(r2controller, 7).toggleWhenPressed(r2vOneBackwards);
     new JoystickButton(r2controller, Button.kLeftBumper.value).toggleWhenPressed(r2vOneForward);
-    r2righthazyTrigger.toggleWhenPressed(r2vTwoBackwards);
+    //r2righthazyTrigger.toggleWhenPressed(r2vTwoBackwards);
+    new JoystickButton(r2controller, 8).toggleWhenPressed(r2vTwoBackwards);
     new JoystickButton(r2controller, Button.kRightBumper.value).toggleWhenPressed(r2vTwoForward);
     new JoystickButton(r2controller, Button.kA.value).toggleWhenPressed(r2solenoidOut);
     new JoystickButton(r2controller, Button.kB.value).toggleWhenPressed(r2servo90);

@@ -3,15 +3,14 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.RobotOneSubsystems;
+import frc.robot.*;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.*;
-public class SolenoidOne extends SubsystemBase {
-  /** Creates a new ExampleSubsystem. */
 
+public class SolenoidOne extends SubsystemBase {
 
   private Solenoid sol;
 

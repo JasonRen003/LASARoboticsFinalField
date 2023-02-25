@@ -32,4 +32,8 @@ public final class Constants {
     public static final int R2V2 = 3;
     public static final int R2SE = 9;
     public static final int R2SO = 5;
+
+    // Field //
+    public static final int FSP = 7; //Field Servo Port
+    public static final int FSWT = 60; //Field Servo Wait Time (s)
 }

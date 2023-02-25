@@ -3,14 +3,13 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.RobotOneSubsystems;
+import frc.robot.*;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import frc.robot.*;
 public class ServoOne extends SubsystemBase {
-  /** Creates a new ExampleSubsystem. */
 
   private Servo servo;
 
