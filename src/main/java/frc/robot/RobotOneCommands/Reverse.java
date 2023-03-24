@@ -4,17 +4,14 @@
 
 package frc.robot.RobotOneCommands;
 import frc.robot.RobotOneSubsystems.*;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class ArcadeDrive extends CommandBase {
+public class Reverse extends CommandBase {
   private final DriveTalons tOne;
-  private final XboxController controller;
 
-  public ArcadeDrive(DriveTalons t, XboxController c) {
+  public Reverse(DriveTalons t) {
     tOne = t;
-    controller = c;
     addRequirements(tOne);    // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -25,10 +22,8 @@ public class ArcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(tOne.getReversed())
-      tOne.arcadeDrive(controller.getRawAxis(1), controller.getRawAxis(2));
-    else
-      tOne.arcadeDrive(-controller.getRawAxis(1), -controller.getRawAxis(2));
+    //tOne.tankDrive(-controller.getLeftY(), -controller.getRightY());
+    tOne.setReversed(!tOne.getReversed());
   }
 
   // Called once the command ends or is interrupted.
@@ -38,6 +33,6 @@ public class ArcadeDrive extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

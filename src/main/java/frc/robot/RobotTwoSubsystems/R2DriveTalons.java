@@ -16,10 +16,12 @@ public class R2DriveTalons extends SubsystemBase {
 
   private TalonSRX talonOne;
   private TalonSRX talonTwo;
+  private boolean reversed;
 
   public R2DriveTalons() {
     talonOne = new TalonSRX(Constants.R2T1);
     talonTwo = new TalonSRX(Constants.R2T2);
+    reversed = false;
   }
 
   //Keeps input value between the high and low values
@@ -39,7 +41,6 @@ public class R2DriveTalons extends SubsystemBase {
   }
 
   public void arcadeDrive(double y, double x){
-
     x = Math.pow(x,3);
     y = Math.pow(y,3);
     x = clamp(x, -1.0, 1.0);
@@ -47,7 +48,15 @@ public class R2DriveTalons extends SubsystemBase {
       
     talonOne.set(ControlMode.PercentOutput, y + x);
     talonTwo.set(ControlMode.PercentOutput, y - x);          
-}
+  }
+
+  public void setReversed(boolean dir){
+    reversed = dir;
+  }
+
+  public boolean getReversed(){
+    return reversed;
+  }
 
   public void putData(){
     SmartDashboard.putNumber("R2 Talon One", talonOne.getMotorOutputPercent());

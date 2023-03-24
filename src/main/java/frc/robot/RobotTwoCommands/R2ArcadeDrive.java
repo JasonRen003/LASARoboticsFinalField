@@ -25,7 +25,10 @@ public class R2ArcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    tOne.arcadeDrive(-controller.getLeftY(), controller.getRightX());
+    if(tOne.getReversed())
+      tOne.arcadeDrive(controller.getRawAxis(1), controller.getRawAxis(2));
+    else
+      tOne.arcadeDrive(-controller.getRawAxis(1), -controller.getRawAxis(2));
   }
 
   // Called once the command ends or is interrupted.

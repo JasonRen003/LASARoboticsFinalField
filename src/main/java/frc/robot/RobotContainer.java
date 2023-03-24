@@ -59,6 +59,7 @@ public class RobotContainer {
   private final VTwoForward vTwoForward = new VTwoForward(victorTwo);
   private final VOneBackwards vOneBackwards = new VOneBackwards(victorOne);
   private final VTwoBackwards vTwoBackwards = new VTwoBackwards(victorTwo);
+  private final Reverse reverse = new Reverse(driveTalons);
   SendableChooser<Command> m_chooser;
 
 
@@ -81,6 +82,7 @@ public class RobotContainer {
   private final R2VTwoForward r2vTwoForward = new R2VTwoForward(r2victorTwo);
   private final R2VOneBackwards r2vOneBackwards = new R2VOneBackwards(r2victorOne);
   private final R2VTwoBackwards r2vTwoBackwards = new R2VTwoBackwards(r2victorTwo);
+  private final R2Reverse r2reverse = new R2Reverse(r2driveTalons);
   SendableChooser<Command> r2chooser;
 
   // Field //
@@ -96,7 +98,6 @@ public class RobotContainer {
     m_chooser.setDefaultOption("R1 Tank Drive", tankDrive);
     m_chooser.addOption("R1 Arcade Drive", arcadeDrive);
     SmartDashboard.putData(m_chooser);
-
     
     victorOne.setDefaultCommand(vOneDefault);
     victorTwo.setDefaultCommand(vTwoDefault);
@@ -142,6 +143,7 @@ public class RobotContainer {
     new JoystickButton(controller, Button.kRightBumper.value).toggleWhenPressed(vTwoForward);
     new JoystickButton(controller, Button.kA.value).toggleWhenPressed(solenoidOut);
     new JoystickButton(controller, Button.kB.value).toggleWhenPressed(servo90);
+    new JoystickButton(controller, 10).toggleWhenPressed(reverse);
     
     //r2lefthazyTrigger.toggleWhenPressed(r2vOneBackwards);
     new JoystickButton(r2controller, 7).toggleWhenPressed(r2vOneBackwards);
@@ -151,6 +153,7 @@ public class RobotContainer {
     new JoystickButton(r2controller, Button.kRightBumper.value).toggleWhenPressed(r2vTwoForward);
     new JoystickButton(r2controller, Button.kA.value).toggleWhenPressed(r2solenoidOut);
     new JoystickButton(r2controller, Button.kB.value).toggleWhenPressed(r2servo90);
+    new JoystickButton(r2controller, 10).toggleWhenPressed(r2reverse);
   }
 
   public void putAllData(){

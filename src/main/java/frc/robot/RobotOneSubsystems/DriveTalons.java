@@ -15,10 +15,12 @@ public class DriveTalons extends SubsystemBase {
 
     private TalonSRX talonOne;
     private TalonSRX talonTwo;
+    boolean reversed;
 
     public DriveTalons() {
         talonOne = new TalonSRX(Constants.R1T1);
         talonTwo = new TalonSRX(Constants.R1T2);
+        reversed = false;
     }
 
     //Keeps input value between the high and low values
@@ -38,14 +40,21 @@ public class DriveTalons extends SubsystemBase {
     }
 
     public void arcadeDrive(double y, double x){
-
-        x = Math.pow(x,3);
+        x = Math.pow(x,3);  
         y = Math.pow(y,3);
         x = clamp(x, -1.0, 1.0);
         y = clamp(y, -1.0, 1.0);  
           
         talonOne.set(ControlMode.PercentOutput, y + x);
         talonTwo.set(ControlMode.PercentOutput, y - x);          
+    }
+
+    public void setReversed(boolean dir){
+        reversed = dir;
+    }
+
+    public boolean getReversed(){
+        return reversed;
     }
 
     public void putData(){

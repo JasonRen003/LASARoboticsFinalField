@@ -25,8 +25,10 @@ public class TankDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //tOne.tankDrive(-controller.getLeftY(), -controller.getRightY());
-    tOne.tankDrive(-controller.getLeftY(), -controller.getRawAxis(3)); //getRightY isn't getting right stick input
+    if(tOne.getReversed())
+      tOne.tankDrive(controller.getRawAxis(1), controller.getRawAxis(3));
+    else
+      tOne.tankDrive(-controller.getRawAxis(1), -controller.getRawAxis(3));
   }
 
   // Called once the command ends or is interrupted.
