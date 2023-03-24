@@ -59,7 +59,13 @@ public class R2DriveTalons extends SubsystemBase {
   }
 
   public void putData(){
-    SmartDashboard.putNumber("R2 Talon One", talonOne.getMotorOutputPercent());
-    SmartDashboard.putNumber("R2 Talon Two", talonTwo.getMotorOutputPercent());
+    if(!reversed){
+      SmartDashboard.putNumber("R2 Talon One", talonOne.getMotorOutputPercent());
+      SmartDashboard.putNumber("R2 Talon Two", talonTwo.getMotorOutputPercent());
+    }
+    else{
+      SmartDashboard.putNumber("R2 Talon One", -talonOne.getMotorOutputPercent());
+      SmartDashboard.putNumber("R2 Talon Two", -talonTwo.getMotorOutputPercent());
+    }
   }
 }
