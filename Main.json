@@ -1,0 +1,215 @@
+{
+  "tabPane": [
+    {
+      "title": "SmartDashboard",
+      "autoPopulate": true,
+      "autoPopulatePrefix": "SmartDashboard/",
+      "widgetPane": {
+        "gridSize": 128.0,
+        "showGrid": true,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "titleType": 0,
+        "tiles": {
+          "0,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_source0": "network_table:///SmartDashboard/Talon One",
+              "_title": "Talon One",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Visuals/Show value": true
+            }
+          },
+          "2,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_source0": "network_table:///SmartDashboard/Talon Two",
+              "_title": "Talon Two",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Visuals/Show value": true
+            }
+          },
+          "5,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_source0": "network_table:///SmartDashboard/R2 Talon One",
+              "_title": "R2 Talon One",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Visuals/Show value": true
+            }
+          },
+          "7,0": {
+            "size": [
+              2,
+              2
+            ],
+            "content": {
+              "_type": "Simple Dial",
+              "_source0": "network_table:///SmartDashboard/R2 Talon Two",
+              "_title": "R2 Talon Two",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Visuals/Show value": true
+            }
+          },
+          "2,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/Servo Position",
+              "_title": "Servo Position",
+              "Range/Min": 0.0,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          },
+          "0,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/Solenoid Status",
+              "_title": "Solenoid Status",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "0,2": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/Victor One",
+              "_title": "Victor One",
+              "Range/Min": -0.5,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          },
+          "7,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/R2 Servo Position",
+              "_title": "R2 Servo Position",
+              "Range/Min": 0.0,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          },
+          "5,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/R2 Solenoid Status",
+              "_title": "R2 Solenoid Status",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "2,2": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/Victor Two",
+              "_title": "Victor Two",
+              "Range/Min": -0.5,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          },
+          "5,2": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/R2 Victor One",
+              "_title": "R2 Victor One",
+              "Range/Min": -0.5,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          },
+          "7,2": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///SmartDashboard/R2 Victor Two",
+              "_title": "R2 Victor Two",
+              "Range/Min": -0.5,
+              "Range/Max": 0.5,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 0,
+              "Visuals/Show text": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Tab 2",
+      "autoPopulate": false,
+      "autoPopulatePrefix": "",
+      "widgetPane": {
+        "gridSize": 128.0,
+        "showGrid": true,
+        "hgap": 16.0,
+        "vgap": 16.0,
+        "titleType": 0,
+        "tiles": {}
+      }
+    }
+  ],
+  "windowGeometry": {
+    "x": 0.0,
+    "y": 0.0,
+    "width": 1382.0,
+    "height": 816.0
+  }
+}
